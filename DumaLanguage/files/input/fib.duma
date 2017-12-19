@@ -1,0 +1,35 @@
+duma fibonacci
+
+inanis fib(integer limit){
+
+	integer count;
+	integer fib1;
+	integer fib2;
+	integer fib3;
+
+	fib1 = 1;
+	fib2 = 1;
+	
+	si (limit == 0) {
+		scribo("0");
+	};
+
+	dum (count < limit) {
+		si (count < 2) {
+			scribo ("1 ");
+		} aliud {
+			fib3 = fib1 + fib2;
+			fib1 = fib2;
+			fib2 = fib3;
+			scribo (fib3 . " ");
+		};
+		
+		count = count +1;
+	};
+};
+
+initials inanis initium() {
+	integer limit;
+	lectio (limit);
+	fib(limit);
+};

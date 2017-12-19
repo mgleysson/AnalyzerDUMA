@@ -1,0 +1,52 @@
+duma shell_sort
+
+inanis shell(integer tamanho, matrix integer numeros){
+
+	integer gap;
+	
+    gap = 1;
+    
+	facite{
+		gap = 3*gap+1;
+	}dum(gap < tamanho);
+
+	facite{
+		gap = gap / 3;
+		quia a in spatium(gap,tamanho,1){
+	   		value = a[i];
+	   		j = i - gap;
+	    
+		   	dum(j >= 0 && value < a[j]) {
+		    	a[j + gap] = a[j];
+	    		j = j - gap;
+	   		};
+	   		
+	   		scribo ("chegou aqui!");
+	   		a[j + gap] = value;
+	  	};
+	}dum(gap > 1);
+
+};
+
+initials inanis initium(){
+
+    scribo("Digite a quantidade de numeros a serem ordenados: ");
+    lectio(n);
+    
+    matrix integer vetor[n];
+    
+    scribo("Digite os numeros:");
+    
+	quia a in spatium(1,n,1){
+    	lectio(vetor[a]);
+    };
+
+    shell(n,vetor);
+    
+    scribo("Numeros ordenados: ");
+    
+	quia a in spatium(1,n,1){
+	   	scribo(vetor[a] . " ");
+	};   
+	  
+};
